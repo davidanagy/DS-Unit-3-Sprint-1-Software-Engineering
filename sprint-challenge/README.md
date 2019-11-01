@@ -1,4 +1,5 @@
-@channel sorry for the delay technical difficulties. you have 15 extra mins to finish today. 
+# Instructions
+(note: please see my answers to Question 7 at the bottom of this document)
 ```
 Data Science Unit 3 Sprint Challenge 1
 Software Engineering - the Acme Way
@@ -189,3 +190,12 @@ Add all the files you wrote (acme.py, acme_report.py, and acme_test.py), as well
 
 Bonus! Got this far? Read up on the history of the fine Acme Corporation, with decades of quality products and many satisfied customers (mostly coyotes).
 ```
+
+# Answers to Part 7 questions:
+> What, in your opinion, is an important part of code reviews? That is, what is something you pay attention to when you review code, and that you appreciate when others do the same for your code?
+
+Answer: Most obvious is to check if there are any bugs that prevent the code from working or output the wrong results. (It might not always be obvious which results are the "right" or "wrong" ones; this is where in-code descriptions or comments help a lot.) If it's working correctly, next is to check for style and readability: Is it clear and obvious what the code is doing and why? Are the variable names explicit and meaningful? If the code needs to be modified in the future, is it easy to do so without causing problems or bugs? Third is organization: Does each file have an appropriate name and exist in an appropriate folder? Are the functions and classes laid out in a rational order, without one function or class trying to do too much by itself? Finally, and perhaps most importantly, the code review should be polite and professional--combining both praise for what was done well, and constructive criticism for what could be done better.
+
+> We have an awful lot of computers here, and it gets pretty confusing with slightly different things running on all of them. How could containers help us improve this situation? Docker can run their own environments they are separate from the operating system.
+
+Answer: Docker is a way to create virtual operating systems "within" one's computer. For example, say someone creates an environment with all and only the libraries and packages necessary to run their code. They can use Docker to create an "image" that carries over that information. Then everyone else can create a "container" based on that image, and run the code in that container. Since the container is effectively a mini-OS, "inside of" yet separate from the main OS on their computer, doing this insures that there won't be any dependency conflict. In other words, by only running other people's code inside a Docker container like this, we ensure that each program is within an OS that can support it.
